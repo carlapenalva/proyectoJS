@@ -69,3 +69,62 @@ function multiplicacion(primerNumero, segundoNumero){
     let multiplicacion = primerNumero*segundoNumero;
     console.log("El resultado de la multiplicacion es :", multiplicacion)
 }
+
+class bebida {
+    constructor (nombre, tipo, marca, precio, stock) {
+        this.nombre =nombre;
+        this.tipo =tipo;
+        this.marca =marca;
+        this.precio =precio;
+        this.stock =stock
+    }
+
+    get_datos(){
+        console.log("DATOS DEL PRODUCTO");
+        console.log('Nombre' , this.nombre);
+        console.log("Tipo de bebida:" , this.tipo);
+        console.log("Marca:" , this.marca);
+        console.log("Precio:" , this.precio);
+        console.log("Stock:" , this.stock);
+        console.log("    ");
+    }
+
+    get_stock(){
+        if(this.stock >= 1){
+        console.log("Tenemos stock del producto:" , this.stock);
+        }
+    
+    }
+
+    set_compra(cantidad){
+
+        this.stock = this.stock + cantidad;
+
+    }
+
+    set_venta(cantidad){
+
+        if(this.stock >= cantidad){
+            console.log ("venta realizada");
+        }
+        else{
+            console.log ("No disponemos de stock para esta venta")
+        }
+    }
+    
+    
+
+}
+
+let bebida_uno = new bebida("fernet", "aperitivo", "branca", 1800, 3);
+let bebida_dos = new bebida("fernet", "aperitivo", "1888", 1500, 0);
+let bebida_tres = new bebida("vodka", "bebida blanca", "absolut", 1750, 5);
+
+bebida_uno.get_datos();
+bebida_dos.get_datos();
+bebida_tres.get_datos();
+
+bebida_uno.get_stock();
+bebida_dos.get_stock();
+bebida_tres.get_stock();
+
